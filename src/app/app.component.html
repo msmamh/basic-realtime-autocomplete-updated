@@ -1,0 +1,10 @@
+<input
+        (keyup)="searchTerm$.next($event.target.value)">
+<!--next() method on keyup events of our input and send in the input string value.-->
+<ul *ngIf="results"> <!--if results available -->
+  <li *ngFor="let result of results.response.docs"> <!-- // loop results one by one -->
+    <a href="{{ result.web_url }}" target="_blank">
+      {{ result.snippet }}
+    </a>
+  </li>
+</ul>
